@@ -1,0 +1,27 @@
+import { defineConfig } from "vite";
+import { resolve } from 'path';
+
+export default defineConfig({
+  build: {
+    cssMinify: false,
+    minify: false,
+    modulePreload: {
+      polyfill: true
+    },
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        // abc: resolve(__dirname, 'abc.html'),
+      },
+      output: {
+        assetFileNames: "assets/[name][extname]",
+        chunkFileNames: "assets/[name].js",
+        entryFileNames: "assets/[name].js",
+        generatedCode: {
+          reservedNamesAsProps: true,
+        }
+      }
+    }
+  },
+  test: {}
+});
