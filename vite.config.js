@@ -6,7 +6,7 @@ export default defineConfig({
     cssMinify: false,
     minify: false,
     modulePreload: {
-      polyfill: true
+      polyfill: false
     },
     rollupOptions: {
       input: {
